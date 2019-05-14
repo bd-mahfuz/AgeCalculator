@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark">
+
+    <include layout="@layout/appbar_layout"
+        android:id="@+id/main_toolbar"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                android:layout_gravity="center_horizontal"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/age_calculate_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_marginRight="8dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/current_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/current_data"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorAccent"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/current_tv"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rounded_border"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/current_date_et"
+                            android:layout_width="335dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/current_tv"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary"
+                            android:hint="@string/dd_mm_yyyy"
+                            android:padding="8dp"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@color/gray" />
+
+                        <ImageView
+                            android:id="@+id/pick_current_date_iv"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:paddingRight="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_date_range"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/birth_date_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/_birth_date_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/birth_date"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorAccent"/>
+
+                    <LinearLayout
+                        android:id="@+id/birth_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/_birth_date_tv"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rounded_border"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/birth_date_et"
+                            android:layout_width="335dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/current_tv"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary"
+                            android:hint="@string/dd_mm_yyyy"
+                            android:padding="8dp"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@color/gray" />
+
+                        <ImageView
+                            android:id="@+id/pick_birth_date_iv"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:paddingRight="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_date_range"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/birth_layout"
+                        android:background="@drawable/rounded_back">
+
+                        <Button
+                            android:id="@+id/calculate_bt"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="58dp"
+                            android:text="@string/calculate"
+                            android:textColor="@android:color/white"
+                            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"></View>
+
+                        <Button
+                            android:id="@+id/reset_bt"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="58dp"
+                            android:text="@string/reset"
+                            android:textColor="@android:color/white"
+                            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/age_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_marginRight="8dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/age_head_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/age"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:layout_below="@id/age_head_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/years"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:textColor="@color/red_light"/>
+
+                            <TextView
+                                android:id="@+id/year_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="25sp"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"></View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/months"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:textColor="@color/red_light"/>
+
+                            <TextView
+                                android:id="@+id/month_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="25sp"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"></View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/days"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:textColor="@color/red_light"/>
+
+                            <TextView
+                                android:id="@+id/day_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="25sp"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/birth_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/birth_head_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/next_birthday"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:layout_below="@id/birth_head_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/months"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:textColor="@color/red_light"/>
+
+                            <TextView
+                                android:id="@+id/n_month_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="25sp"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"></View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/days"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:textColor="@color/red_light"/>
+
+                            <TextView
+                                android:id="@+id/n_day_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="25sp"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/details_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/details_head_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:layout_below="@id/details_head_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_years"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_months"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_weeks"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_days"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_hours"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_minutes"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_seconds"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gradient"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp">
+
+                        </View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/total_year_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/total_month_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/total_week_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/total_day_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/total_hour_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/total_minute_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/total_second_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/upcomming_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/upcomming_head_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upcoming_birthday"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:layout_below="@id/upcomming_head_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/date1_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_20_oct_2019"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/date2_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_20_oct_2019"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/date3_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_20_oct_2019"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/date4_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_20_oct_2019"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+
+                            <TextView
+                                android:id="@+id/date5_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_20_oct_2019"
+                                android:textSize="18sp"
+                                android:gravity="right"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gradient"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp">
+
+                        </View>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/day1_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/day2_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/day3_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/day4_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:id="@+id/day5_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_24"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@android:color/black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

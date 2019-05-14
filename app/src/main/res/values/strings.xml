@@ -1,0 +1,97 @@
+<resources>
+
+    <string name="app_name">Age Calculator</string>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="calculate_age">Calculate Age</string>
+    <string name="current_data">Current Data</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="_20_10_1994">20-10-1994</string>
+    <string name="calculate">Calculate</string>
+    <string name="reset">Reset</string>
+    <string name="age">Age</string>
+    <string name="years">Years</string>
+    <string name="_24">0</string>
+    <string name="months">Months</string>
+    <string name="days">Days</string>
+    <string name="next_birthday">Next Birthday</string>
+    <string name="_20_11_2019">20-11-2019</string>
+    <string name="dd_mm_yyyy">dd/MM/yyyy</string>
+
+    <string name="privacy_policy_text">
+        <![CDATA[
+        <p><h1>Privacy &amp; Policy</h1></p>
+<p>K Cirque Apps fabricated all application as a Free application. This SERVICE is given by K Cirque Apps at no expense and is planned for use in its present condition.</p>
+
+<p>This page is utilized to educate guests in regards to our arrangements with the accumulation, use, and divulgence of Personal Information in the event that anybody chose to utilize our Service.</p>
+
+<p>In the event that you utilize our Service, at that point you consent to the accumulation and utilization of data in connection to this approach. The Personal Information that we gather is utilized for giving and improving the Service. We won\'t utilize or impart your data to anybody with the exception of as depicted in this Privacy Policy.</p>
+
+<p><h4>Data Collection and Use</h4></p>
+
+<p>For a superior encounter, while utilizing our Service, we may expect you to give us certain by and by recognizable data. The data that we solicitation will be held by us and utilized as depicted in this protection approach.</p>
+
+<p>The application uses outsider administrations that may gather data used to recognize you.</p>
+
+<p>Connection to protection strategy of outsider specialist co-ops utilized by the application</p>
+
+<p>Google Play Services</p>
+
+<p><h4>Log Data</h4></p>
+
+<p>We need to acknowledge you that at whatever point you utilize our Service, for a situation of a mistake in the application we gather information and data (through outsider items) on your telephone called Log Data. This Log Data may incorporate data, for example, your device Internet Protocol ("IP") address, device name, working framework form, the design of the application while using our Service, the time and date of your utilization of the Service, and different insights.</p>
+
+<p><h4>Treats</h4></p>
+
+<p>Treats are records with a little measure of information that are regularly utilized as mysterious interesting identifiers. These are sent to your program from the sites that you visit and are put away on your gadget\'s inward memory.</p>
+
+<p>This Service does not utilize these "treats" unequivocally. In any case, the application may utilize outsider code and libraries that utilization "treats" to gather data and improve their administrations. You have the choice to either acknowledge or decline these treats and know when a treat is being sent to your gadget. On the off chance that you deny our treats, you will be unable to utilize a few parts of this Service.</p>
+
+<p><h4>Specialist organizations</h4></p>
+
+<p>We may utilize outsider organizations and people because of the accompanying reasons:</p>
+
+<p>To encourage our Service</p>
+
+<p>To give the Service for our sake</p>
+
+<p>To perform Service-related administration. or</p>
+
+<p>To help us in dissecting how our Service is utilized.</p>
+
+<p>We need to educate clients of this Service these outsiders approach your Personal Information. The reason is to play out the undertakings appointed to them for our sake. In any case, they are committed not to reveal or utilize the data for some other reason.</p>
+
+<p><h4>Security</h4></p>
+
+<p>We esteem your trust in giving us your Personal Information, in this manner we are endeavoring to utilize economically worthy methods for securing it. However, recollect that no strategy for transmission over the web, or technique for electronic capacity is 100% secure and dependable, and we can\'t ensure its outright security.</p>
+
+<p><h4>Connections to Other Sites</h4></p>
+
+<p>This Service may contain connections to different locales. In the event that you click on an outsider connection, you will be coordinated to that site. Note that these outer locales are not worked by us. In this manner, we firmly encourage you to audit the Privacy Policy of these sites. We have no influence over and accept no accountability for the substance, security strategies, or practices of any outsider locales or administrations.</p>
+
+<p><h4>Children Privacy</h4></p>
+
+<p>These Services don\'t address anybody younger than 13. We don\'t purposely gather by and by recognizable data from youngsters under 13. For the situation we find that a kid under 13 has given us individual data, we quickly erase this from our servers. On the off chance that you are a parent or watchman and you know that your tyke has given us individual data, it would be ideal if you reach us with the goal that we will probably do fundamental activities.</p>
+
+<p><h4>Changes to This Privacy Policy</h4></p>
+
+<p>We may refresh our Privacy Policy every now and then. Therefore, you are encouraged to survey this page occasionally for any changes. We will advise you of any progressions by posting the new Privacy Policy on this page. These progressions are taking effect right now after they are posted on this page.</p>
+
+<p><h4>Get in touch with Us</h4></p>
+
+<p>In the event that you have any inquiries or recommendations about our Privacy Policy, don\'t dither to reach us.</p>
+<p>kcirqueapps@gmail.com</p>
+]]>
+    </string>
+    <string name="total_years">Total Years</string>
+    <string name="total_months">Total Months</string>
+    <string name="total_weeks">Total Weeks</string>
+    <string name="total_days">Total Days</string>
+    <string name="total_hours">Total Hours</string>
+    <string name="total_minutes">Total Minutes</string>
+    <string name="total_seconds">Total Seconds</string>
+    <string name="upcoming_birthday">Upcoming Birthday</string>
+    <string name="_20_oct_2019">20 Oct 2019</string>
+
+</resources>
